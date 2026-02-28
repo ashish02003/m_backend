@@ -22,7 +22,7 @@ cloudinary.config({
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log('MongoDB connected'))
+    .then(() => console.log('MongoDB connected '))
     .catch(err => console.log(err));
 
 // Better mongoose event logging to help debug connection issues
