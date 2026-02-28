@@ -61,12 +61,13 @@ app.use('/api/shipping', require('./routes/shippingRoutes'));   // ✅ NimbusPos
 
 
 // Serve frontend static files if present
-app.use(express.static(path.join(__dirname, 'dist')));
+const distPath = path.resolve(__dirname, 'dist');
+app.use(express.static(distPath));
 
 // SPA fallback - serve index.html for any non-API route (client-side routing)
 app.use((req, res, next) => {
     if (req.path.startsWith('/api')) return next();
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // For local development
