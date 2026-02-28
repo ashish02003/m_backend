@@ -56,13 +56,13 @@ app.get('/', (req, res) => {
 });
 
 // Serve frontend static files if present
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // SPA fallback - serve index.html for any non-API route (client-side routing)
 // Fallback middleware: serve `index.html` for non-API routes (SPA)
 app.use((req, res, next) => {
     if (req.path.startsWith('/api')) return next();
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
