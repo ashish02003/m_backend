@@ -52,7 +52,7 @@ app.use('/api/payment', require('./routes/paymentRoutes'));    // ✅ Razorpay
 app.use('/api/shipping', require('./routes/shippingRoutes'));   // ✅ NimbusPost webhook + tracking
 
 app.get('/', (req, res) => {
-    res.send('API is running...');
+    res.send('API is running... ');
 });
 
 // Serve frontend static files if present
